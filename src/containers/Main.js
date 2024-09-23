@@ -18,11 +18,58 @@ const Main = () => {
       lists: [
         {
           _id: 0,
-          title: "Default List",
+          title: "To Do",
           tasks: [
             {
-              _id: 0,
-              title: "Title of task",
+              _id: Date.now() + "22a",
+              title: "Title of task1",
+              dueDate: "",
+              assignee: "",
+              priority: "",
+            },
+            {
+              _id: Date.now() + "224a",
+              title: "Title of task2",
+              dueDate: "",
+              assignee: "",
+              priority: "",
+            },
+          ],
+        },
+        {
+          _id: 1,
+          title: "  In Progress",
+          tasks: [
+            {
+              _id: Date.now() + "22b",
+              title: "Title of task1",
+              dueDate: "",
+              assignee: "",
+              priority: "",
+            },
+            {
+              _id: Date.now() + "223b",
+              title: "Title of task2",
+              dueDate: "",
+              assignee: "",
+              priority: "",
+            },
+          ],
+        },
+        {
+          _id: 2,
+          title: "Done",
+          tasks: [
+            {
+              _id: Date.now() + "22c",
+              title: "Title of task1",
+              dueDate: "",
+              assignee: "",
+              priority: "",
+            },
+            {
+              _id: Date.now() + "223c",
+              title: "Title of task2",
               dueDate: "",
               assignee: "",
               priority: "",
@@ -61,7 +108,47 @@ const Main = () => {
     const newBoard = {
       _id: index.toString(),
       name: boardName,
-      lists: [],
+      lists: [
+        {
+          _id: 0,
+          title: "To Do",
+          tasks: [
+            {
+              _id: Date.now() + "12a",
+              title: "Title of task1",
+              dueDate: "",
+              assignee: "",
+              priority: "",
+            },
+          ],
+        },
+        {
+          _id: 1,
+          title: "  In Progress",
+          tasks: [
+            {
+              _id: Date.now() + "12b",
+              title: "Title of task2",
+              dueDate: "",
+              assignee: "",
+              priority: "",
+            },
+          ],
+        },
+        {
+          _id: 2,
+          title: "Done",
+          tasks: [
+            {
+              _id: Date.now() + "12c",
+              title: "Title of task3",
+              dueDate: "",
+              assignee: "",
+              priority: "",
+            },
+          ],
+        },
+      ],
     };
     setAllBoards([...allBoards, newBoard]);
 
@@ -153,7 +240,8 @@ const Main = () => {
     );
 
     const [movedTask] = sourceList?.tasks?.splice(source.index, 1);
-    if (!destinationList.tasks) {
+    console?.log(destinationList);
+    if (!destinationList?.tasks) {
       console.log(destinationList);
       destinationList.tasks = [];
     }
@@ -276,7 +364,7 @@ const Main = () => {
           Add Board +
         </div>
         {boardDropDown && (
-          <div class="absolute  h-full right-20 top-8 h-[130px] w-[200px] bg-white z-5 mt-5  px-2 py-3   rounded-md  shadow-lg  bg-[white] focus:outline-none">
+          <div class="absolute  h-full right-20 top-8 h-[150px] w-[200px] bg-white z-5 mt-5  px-2 py-3   rounded-md  shadow-lg  bg-[white] focus:outline-none">
             <div className="flex items-center justify-between">
               {" "}
               <p className="text-[14px]"> New Board</p>
@@ -388,7 +476,7 @@ const Main = () => {
               )}
             </Droppable>
           </DragDropContext>
- 
+
           <div className="my-10 mx-4 relative flex justify-end">
             <div
               className="w-[120px] text-center text-[skyBlue] text-[14px] bg-[grey] border-[#333] p-2 rounded-md text-white cursor-pointer"
@@ -426,7 +514,7 @@ const Main = () => {
                       onChange={(e) => setListName(e.target.value)}
                     />
                     <button
-                      className="bg-[lightBlue] text-[14px] p-1 text-[#fff] w-1/2 rounded-md"
+                      className="bg-blue-400 text-[14px] p-1 text-[#fff] w-1/2 rounded-md"
                       disabled={listName === "" ? true : false}
                       onClick={() => {
                         AddNewList(listName);
