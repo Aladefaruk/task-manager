@@ -34,7 +34,7 @@ const TaskForm = ({ onAddTask, close, selectedTask, handleInputChange }) => {
                 <input
                   type="text"
                   name="title"
-                  defaultValue={selectedTask?.title}
+                  // defaultValue={selectedTask?.title}
                   onChange={(e) => handleInputChange(e)}
                   className="p-2 text-[12px] outline-none border-[1px] border-[gray] my-2 rounded-md w-full"
                   placeholder={selectedTask?.title || "Title"}
@@ -48,7 +48,7 @@ const TaskForm = ({ onAddTask, close, selectedTask, handleInputChange }) => {
                 <textarea
                   type="text"
                   name="description"
-                  defaultValue={selectedTask?.description}
+                  // defaultValue={selectedTask?.description}
                   onChange={(e) => handleInputChange(e)}
                   className="p-2 text-[12px] outline-none border-[1px] border-[gray] resize-none  my-2 rounded-md h-[100px] w-full"
                   placeholder={selectedTask?.description || "Description"}
@@ -62,7 +62,7 @@ const TaskForm = ({ onAddTask, close, selectedTask, handleInputChange }) => {
                 <input
                   type="email"
                   name="assignee"
-                  defaultValue={selectedTask?.assignee}
+                  // defaultValue={selectedTask?.assignee}
                   onChange={(e) => handleInputChange(e)}
                   className="p-2 text-[12px] outline-none border-[1px] border-[gray] my-2 rounded-md w-full"
                   placeholder={selectedTask?.assignee || "Assignee"}
@@ -71,12 +71,12 @@ const TaskForm = ({ onAddTask, close, selectedTask, handleInputChange }) => {
 
               <div>
                 <label className="text-[12px] lg:text-[14px] text-[grey]">
-                  Due date <span>({selectedTask?.dueDate})</span>
+                  Due date <span>{`${selectedTask?.dueDate}`}</span>
                 </label>
                 <input
                   type="date"
                   name="dueDate"
-                  defaultValue={selectedTask?.dueDate}
+                  // defaultValue={selectedTask?.dueDate}
                   onChange={(e) => handleInputChange(e)}
                   className="p-2 text-[12px] outline-none border-[1px] border-[gray] my-2 rounded-md w-full"
                 />
@@ -93,21 +93,17 @@ const TaskForm = ({ onAddTask, close, selectedTask, handleInputChange }) => {
                   placeholder=""
                   defaultValue={selectedTask?.priority}
                 >
-                  <option disabled>Select Priority</option>
-                  {selectedTask?.priority !== "" && (
+                  <option value="none" selected disabled hidden>
+                    {selectedTask?.priority || "Select Priority"}
+                  </option>
+                  {/* {selectedTask?.priority !== "" && (
                     <option className="capitalize">
                       {selectedTask?.priority}
                     </option>
-                  )}
-                  <option value="High" className="text-red-400">
-                    High
-                  </option>
-                  <option value="Medium" className="text-[yellow]">
-                    Medium
-                  </option>
-                  <option value="Low" className="text-green-200">
-                    Low
-                  </option>
+                  )} */}
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Low">Low</option>
                 </select>
               </div>
 

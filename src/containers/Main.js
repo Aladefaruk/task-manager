@@ -101,6 +101,7 @@ const Main = () => {
     const updatedBoards = allBoards.filter((board) => board._id !== boardId);
     setAllBoards(updatedBoards);
     updateBoard(updatedBoards);
+    setActiveBoard(0);
   };
 
   //Code to add new board to the database
@@ -346,6 +347,7 @@ const Main = () => {
                           active={activeBoard}
                           changeTab={() => setActiveBoard(board?._id)}
                           removeBoard={(prop) => RemoveBoard(prop)}
+                          setDefault={() => setActiveBoard(0)}
                         />
                       </div>
                     )}
@@ -364,7 +366,7 @@ const Main = () => {
           Add Board +
         </div>
         {boardDropDown && (
-          <div class="absolute  h-full right-20 top-8 h-[150px] w-[200px] bg-white z-5 mt-5  px-2 py-3   rounded-md  shadow-lg  bg-[white] focus:outline-none">
+          <div class="absolute  h-full right-20 top-8 h-[120px] w-[200px] bg-white z-5 mt-5  px-2 py-3   rounded-md  shadow-lg  bg-[white] focus:outline-none">
             <div className="flex items-center justify-between">
               {" "}
               <p className="text-[14px]"> New Board</p>

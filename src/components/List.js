@@ -101,7 +101,8 @@ const List = ({
                   onClick={() => {
                     setNewTaskModal(true);
                     setEdit(true);
-                    setAddTaskDropDown(false);
+                      setAddTaskDropDown(false);
+                      setNewTask(selectedTask);
                   }}
                 >
                   Edit
