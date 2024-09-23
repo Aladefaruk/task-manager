@@ -358,45 +358,46 @@ const Main = () => {
             )}
           </Droppable>
         </DragDropContext>
-
-        <div
-          className="bg-[white] p-2 rounded-md cursor-pointer text-[10px] lg:text-[13px] w-[90px] lg:w-[100px]"
-          onClick={() => setBoardDropDown(!boardDropDown)}
-        >
-          Add Board +
-        </div>
-        {boardDropDown && (
-          <div class="absolute  h-full right-20 top-8 h-[120px] w-[200px] bg-white z-5 mt-5  px-2 py-3   rounded-md  shadow-lg  bg-[white] focus:outline-none">
-            <div className="flex items-center justify-between">
-              {" "}
-              <p className="text-[14px]"> New Board</p>
-              <p
-                onClick={() => setBoardDropDown(false)}
-                className="cursor-pointer"
-              >
-                x
-              </p>
-            </div>
-            <form>
-              <input
-                type="text"
-                className="p-1 text-[12px] outline-none border-[1px] boarder-[#333] my-2 rounded-sm w-full"
-                placeholder="Board Name"
-                onChange={(e) => setBoardName(e.target.value)}
-              />
-              <button
-                className="bg-blue-400 text-[14px] p-1 text-[#fff] w-1/2 rounded-md cursor-pointer"
-                disabled={boardName === "" ? true : false}
-                onClick={() => {
-                  AddBoard(allBoards?.length);
-                  setBoardDropDown(false);
-                }}
-              >
-                Add Board
-              </button>
-            </form>
+        <div className="relative">
+          <div
+            className="bg-[white] p-2 rounded-md cursor-pointer text-[10px] lg:text-[13px] w-[90px] lg:w-[100px]"
+            onClick={() => setBoardDropDown(!boardDropDown)}
+          >
+            Add Board +
           </div>
-        )}
+          {boardDropDown && (
+            <div class="absolute  h-[120px] right-20 top-5 w-[200px]  z-5 mt-5  px-2 py-3   rounded-md   shadow-lg  bg-[white] focus:outline-none">
+              <div className="flex items-center justify-between">
+                {" "}
+                <p className="text-[14px]"> New Board</p>
+                <p
+                  onClick={() => setBoardDropDown(false)}
+                  className="cursor-pointer"
+                >
+                  x
+                </p>
+              </div>
+              <form>
+                <input
+                  type="text"
+                  className="p-1 text-[12px] outline-none border-[1px] boarder-[#333] my-2 rounded-sm w-full"
+                  placeholder="Board Name"
+                  onChange={(e) => setBoardName(e.target.value)}
+                />
+                <button
+                  className="bg-blue-400 text-[14px] p-1 text-[#fff] w-1/2 rounded-md cursor-pointer"
+                  disabled={boardName === "" ? true : false}
+                  onClick={() => {
+                    AddBoard(allBoards?.length);
+                    setBoardDropDown(false);
+                  }}
+                >
+                  Add Board
+                </button>
+              </form>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="flex items-center">

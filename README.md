@@ -61,17 +61,33 @@ Ensure you have the following installed on your machine:
    ```bash
    npm run build
 
-### Project Structure
 
-├── src/
-│   ├── components/        # Contains reusable React components
-|   |-- containers/        # contains the cover of the project
-│   ├── assets/            # Static assets like images, fonts, etc.
-│   ├── App.js             # Main application component
-│   ├── index.js           # Entry point of the application
-│   └── ...
-├── public/                # Public files for the app
-├── package.json           # Project configuration and dependencies
-└── README.md              # Project documentation
+### Walkthrough the functionalities
+
+1. **To Create a new board**
+
+- Click on the "Add board +" button and enter board name
+
+2. **To Create a new list**
+
+- Click on the "Add list +" button and enter list name
+
+3. **Moving lists**
+
+- Reorder the lists horizontally by simply dragging them to whatever destination you want
+
+
+4. **Moving Board**
+
+- Reorder the boards horizontally by simply dragging them to whatever destination you want
+
+5. **Tasks**
+
+- Reorder the tasks vertically by simply dragging them to whatever destination you want inside a particular list
+- Reorder the tasks horizontally across multiple lists by simply dragging them to whatever destination you want
+- Tasks can be edited and deleted
+- Priorities are also assigned to tasks
+
+
 
 
