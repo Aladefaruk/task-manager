@@ -59,11 +59,10 @@ Ensure you have the following installed on your machine:
 1. **Build the project:**
 
    ```bash
-npm run build
+   npm run build
 
 ### Project Structure
 
-task-management-app/
 ├── src/
 │   ├── components/        # Contains reusable React components
 |   |-- containers/        # contains the cover of the project
